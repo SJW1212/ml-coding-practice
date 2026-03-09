@@ -253,3 +253,203 @@ print(s2)
 s2 = set({1, 2, 3, 4, 5, 6, 3, 1, 6})
 print(s2)
 
+# 비교 연산자
+x = 3
+y = 2
+print(x == y)
+print(x != y)
+print(x > y)
+
+# 조건의 연결
+money = 1300
+if money >= 1200 and money < 3500:
+    print('버스를 탈 수 있습니다.')
+
+# 그룹 자료형의 원소인지 검사하기
+print(1 in [1, 2, 3])
+print(x in [1, 2, 3])
+print(x not in [1, 2, 3])
+print('a' in ['a', 'b', 'c', 'd'])
+print('i' not in 'Python')
+
+# 아무 것도 하지 않게 설정
+if money >= 10:
+    pass
+else:
+    print('저금하자!')
+    
+"""#4 반복문"""
+
+# for 반복문1
+test_list = ['one', 'two', 'three']
+for i in test_list:
+    x = i + '!'
+    print(x)
+    
+# for 반복문 2
+number = 0
+for score in [90, 25, 67,45, 93]:
+    number += 1
+    
+    if score > 60:
+        print("%d번 학생은 합격입니다." % number)
+    else:
+        print("%d번 학생은 불합격입니다." % number)
+        
+# while 문
+ㅑ = 0
+while i < 5:
+    i += 1
+    print('*' * i)
+    
+# 함수 정의
+def sum1(a, b):
+    x = a = b
+    return x
+
+def sum2(*args):
+    x = 0
+    for i in args:
+        x += i
+    return x
+
+# 함수 호출
+a = 5
+b = 3
+print(sum1(a, b))
+print(sum2(3,5))
+print(sum2(1, 2, 3, 4, 5))
+print(sum2(2, 3.5 ,10))
+
+"""## 내장 함수"""
+
+# 숫자 x의 절대값을 반환
+print(abs(-3.5))
+
+# 그룹 자료형의 변수 x의 모든 원소가 참(0이 아닌 값)이면 True 반환
+print(all([1, 2, 3, 4]))
+print(all([4, -2, 0.0, 4]))
+
+# 그룹 자료형의 변수 x의 원소중 하나라도 참이면 True 반환
+print(any([1, 2, 3, 4]))
+print(any([4, -2, 0.0, 4]))
+
+# 아스키코드 값에 대한 문자 출력
+print(chr(97))
+print(chr(48))
+
+# 문자에 대한 아스키코드 값 출력
+print(ord('a'))
+print(ord('0'))
+
+# 객체 x가 가진 멤버 변수와 멤버 함수 보여주기
+print(dir([1, 2, 3]))
+print(dir({'1':'a'}))
+print(dir(1))
+
+print(int('3'))                # x를 정수 형태로 반환
+print(str(3))                  # x를 문자열 형태로 반환
+
+# x를 리스트로 반환
+print(list("Python"))
+print(1, 2, 3)
+
+# x를 튜플로 반환
+print(tuple("Python"))
+print(tuple([1, 2, 3]))
+
+# x의 자료형을 반환
+print(type("abc"))
+print(type(a))
+
+# 간단한 삽입형 함수 생성
+sum = lambda a, b: a + b
+
+print(sum(3, 5))
+
+# 최대, 최소값 반환
+print(max([1, 4, 2, 8, 6]))
+print(max("Python"))
+
+print(min([1, 4, 2, 8, 6]))
+print(min("Python"))
+
+# x의 y제곱 결과값 반환
+print(pow(2, 4))
+
+# 사용자 입력으로 받은 값을 문자열로 반환1
+c = input("값을 입력해주세요:")
+print(c)
+
+# 사용자 입력으로 받은 값을 정수로 반환2
+c = input("점수를 입력하세요: ")
+print(c)
+
+# 입력 받은 숫자에 해당하는 범위의 값을 반환
+print(range(5))
+print(list(range(5)))
+print(list(range(5, 10)))
+print(list(range(5, 10, 2)))
+
+for i in range(5, 20, 3):
+    print(i)
+    
+# 입력값 s의 길이를 반환
+len('Python')
+
+print(sorted([3, 0 , 2, 1]))
+print(sorted('Python'))
+
+# 패키지, 모듈 사용
+# Request('https://www.sunmoon.ac.kr')   # 오류 발생
+
+import urllib.request
+urllib.request.Request('http://www.sunmoon.ac.kr')
+
+import pandas
+pandas.DataFrame()
+
+from datetime import datetime
+datetime.now()
+
+# 파일 객체 생성
+f = open('example.txt', 'w')
+print(f)
+
+# 파일 닫기
+f.close()
+
+# 파일 쓰기
+f = open('example.txt', 'w')
+for i in range(1,6):
+    data = '%d번째 줄입니다. \n' % i
+    f.write(data)
+f.close()
+
+# 파일에 내용 추가하기
+f = open('example.txt', 'w') #?
+for i in range(6, 11):
+    data = '%d번째 줄 추가입니다. \n' % i
+    f.write(data)
+f.close()
+
+# 파일 모드 'r' - readline()
+f = open('example.txt', 'r')
+
+while True:
+    line = f.readline()
+    if not line: break
+    print(line)
+    
+f.close()
+
+# 파일 모드 'r' - read()
+f = open('example.txt', 'r')
+data = f.read()
+f.close()
+data
+
+# with open() as 파일 객체
+with open('example.txt', 'w') as f:
+    f.write("Now is better than naver.")
+# data = f.read()       # 오류 발생
