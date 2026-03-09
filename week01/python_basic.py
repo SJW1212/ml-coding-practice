@@ -166,3 +166,62 @@ t4 = (1, 2, (3, 4), ('Life', 'is'))
 print(t4[0])
 print(t4[3][-1])
 
+# 튜플 슬라이싱
+t4[0:3]
+
+# 튜플 연결
+print(t1 + t2)
+# print(t1 + "hi~ ^^;")   # 오류 발생
+
+# 튜플 반복
+t2 * 10
+
+# 튜플 수정(불가능)
+# t2[2] = 99    # 오류 발생
+
+# 딕셔너리 만들기
+dic = {'name':'Hong', 'phone':'01012345678', 'birth':'0814'}
+
+# 원소 추가
+dic[1] = 'a'
+print(dic)
+
+dic['pet'] = 'dog'
+print(dic)
+
+# 원소 삭제
+del dic[1]
+print(dic)
+
+# 원소의 value 구하기
+print(dic['phone'])
+print(dic['name'])
+
+# key의 리스트 만들기
+print(dic.keys())
+print(list(dic.keys()))
+
+for key in dic.keys():
+    print(dic[key])
+    
+# value의 리스트 만들기
+print(dic.values())
+print(list(dic.values()))
+
+# key, value 쌍 구하기
+print(dic.items())
+
+for key, value in dic.items():
+    print(key + ":" + value)
+    
+# 원소 삭제
+dic.clear()
+print(dic)
+
+# 집합 만들기ㅣ
+s1 = {1, 2, 'a', 5}
+s2 = set([1, 2, 3, 4, 5])
+print(s2)
+s3 = set([4, 5, 6, 7, 8, 9])
+print(s3)
+
