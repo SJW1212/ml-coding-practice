@@ -297,7 +297,7 @@ for score in [90, 25, 67,45, 93]:
         print("%d번 학생은 불합격입니다." % number)
         
 # while 문
-ㅑ = 0
+i = 0
 while i < 5:
     i += 1
     print('*' * i)
