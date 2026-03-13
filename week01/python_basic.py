@@ -127,7 +127,7 @@ print(a)
 
 # 원소 정렬
 b.sort()
-print(a) #?
+print(a)
 
 # 원소 순서 뒤집기
 a = [3, 4, 1, 9]
@@ -427,7 +427,7 @@ for i in range(1,6):
 f.close()
 
 # 파일에 내용 추가하기
-f = open('example.txt', 'w') #?
+f = open('example.txt', 'w')
 for i in range(6, 11):
     data = '%d번째 줄 추가입니다. \n' % i
     f.write(data)
